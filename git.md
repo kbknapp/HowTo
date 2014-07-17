@@ -1,6 +1,7 @@
 # Git
 
 A How-To about using the `git` command for version tracking a repository.
+
 ## Config
 
 
