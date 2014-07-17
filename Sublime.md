@@ -5,7 +5,7 @@ Cheatsheet used to help with the most common and useful features of Sublime Text
 
 ```⌘P``` Goto anything
 
-```⌘B⌘K``` Toggle Sidebar
+```⌘B,⌘K``` Toggle Sidebar
 
 ```⌥⇧N``` Advanced New File
 
