@@ -22,19 +22,34 @@ Create a new repository.
     
 The above is typically preceded by ```$ mkdir myproject && cd myproject``` which creates a directory called *myproject* and then changes into that directory.
 
-## Misc
+## Status
+
+Check the status of ```git``` repository
+
 	$ git status
-Checks the status of ```git``` repository
+
+## Tracking Files / Folders
+
+Add a file or folder to be tracked.
 
 	$ git add some_file.txt
-Adds some_file.txt to be tracked.
+
+```git add``` also accepts wildcards (```*```) or the special character ```.``` meaning all files and folders.
+
+## Displaying Differences
+
+Display the differences between the working directory (example *some_file.py*) and the staging directory 
 
 	$ git diff some_file.py
-Displays the differences between the working directory *some_file.py* and the staging directory. Adding ```--staged``` compares the staging area to the repository.
+	
+### Flags
 
-	$ git diff HEAD some_file.py
-Compares the file *some_file.py* in your working directory to the most recent commit version of the same file.
+Adding the following flags to ```git diff``` changes the functionality.
 
+```--staged``` compares the staging area to the repository.
+
+```HEAD```  compares the file in your working directory to the most recent commit version of the same file.
+	
 ## Logging / History
 
 Show a Tk GUI showing commit history
