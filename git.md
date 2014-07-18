@@ -60,19 +60,23 @@ Show a Tk GUI showing commit history
 
 	$ gitk
 	
-Show a history of commits on the current repository.
+Show a history of commits on the current repository in the current branch.
 
 	$ git log
 	
 ### Flags
 
-Adding the following flags changes the output of `git log`
+Adding the following flags changes the output of `git log` or `gitk` respectively
 
 `--stats` show's the history with some statistics of what was changed.
 
-`--oneline` shows single line version of commits history.
+`--oneline` shows single line version of commits history. (May be combined with the following flags as well)
 
-`--graph` shows branch diagrams (may be combined with `--oneline`)
+`--graph` shows branch diagrams
+
+`--all` shows commit history for the current repository from *all* branches.
+
+`--decorate` shows which branch commits were made two along with HEAD information.
 
 `--pretty="%h, %cn, %cr"` shows commit history in a formatted version (example uses abbreviated hash, commiter name, and relative commiter date seperated via commas)
 
@@ -110,4 +114,36 @@ To ignore files create a file named *.gitignore* inside the repository. Add one 
 	.DS_Store
 	tmp/*.txt
 	!tmp/important.txt
+
+## Branches
+
+To see a list of branches as well s the currently selected branch
+	
+	$ git branch
+	
+To create a branch pass the branch name to `git branch`, i.e.
+
+	$ git branch devel
+
+Switch to a different branch (example switches to the `devel` branch)
+
+	$ git checkout devel
+	
+Alternatively use `git checkout` with the `-b` flag to create a new branch and switch to it in a single command.
+
+	$ git checkout -b devel
+
+Delete a branch using the `-d` and the branch name
+
+Another way to merge two branches is using `rebase` which applies changes to the `master` in a linear fashion, then re-applies all other commits and finally removes the branch being merged. Example:
+
+	$ git rebase devel
+
+### Merging
+
+If you have two branches that you'd like to merge `master` and `devel` switch two the branch that will be merged *into* (i.e. example merges the `devel` branch *into* the `master` branch)
+
+	$ git checkout master
+	$ git merge devel
+
   
