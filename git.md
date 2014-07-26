@@ -4,13 +4,11 @@ A How-To about using the `git` command for version tracking a repository.
 
 ## Config
 
-
 Set the username for all repositories to John Doe.
 
 	$ git config --global user.name "John Doe"
 
 Set the user email for all repositories to jdoe@mail.com.
-
 
 	$ git config --global user.email "jdoe@mail.com"
 
@@ -23,7 +21,7 @@ Set the `git` output to colorized.
 Create a new repository.
 
     $ git init
-    
+
 The above is typically preceded by `$ mkdir myproject && cd myproject` which creates a directory called *myproject* and then changes into that directory.
 
 ## Status
@@ -45,7 +43,7 @@ Add a file or folder to be tracked.
 Display the differences between the working directory (example *some_file.py*) and the staging directory 
 
 	$ git diff some_file.py
-	
+
 ### Flags
 
 Adding the following flags to `git diff` changes the functionality.
@@ -53,17 +51,17 @@ Adding the following flags to `git diff` changes the functionality.
 `--staged` compares the staging area to the repository.
 
 `HEAD`  compares the file in your working directory to the most recent commit version of the same file.
-	
+
 ## Logging / History
 
 Show a Tk GUI showing commit history
 
 	$ gitk
-	
+
 Show a history of commits on the current repository in the current branch.
 
 	$ git log
-	
+
 ### Flags
 
 Adding the following flags changes the output of `git log` or `gitk` respectively
@@ -105,7 +103,7 @@ Adding the following flags to `git commit` changes the functionality.
 `-a` Commits all tracked files with all current changes. Asks for a commit message by showing a status screen.
 
 `-m "a message"` Commits files with the specified message.
-  
+
 ## Ignoring
 
 To ignore files create a file named *.gitignore* inside the repository. Add one line per file (or folder) to ignore. Wildcards (`*`) are allowed. A line starting with `!` tels `git` to *include* such files and folders regardless of what other rules are listed in this file. Example:
@@ -118,9 +116,9 @@ To ignore files create a file named *.gitignore* inside the repository. Add one 
 ## Branches
 
 To see a list of branches as well s the currently selected branch
-	
+
 	$ git branch
-	
+
 To create a branch pass the branch name to `git branch`, i.e.
 
 	$ git branch devel
@@ -128,7 +126,7 @@ To create a branch pass the branch name to `git branch`, i.e.
 Switch to a different branch (example switches to the `devel` branch)
 
 	$ git checkout devel
-	
+
 Alternatively use `git checkout` with the `-b` flag to create a new branch and switch to it in a single command.
 
 	$ git checkout -b devel
@@ -145,5 +143,3 @@ If you have two branches that you'd like to merge `master` and `devel` switch tw
 
 	$ git checkout master
 	$ git merge devel
-
-  
